@@ -16,19 +16,28 @@ class Coche {
 
     }
 
-    public function getMatricula () {
+    public function getMatricula() {
         return $this->matricula;
     }
 
-    public function getMarca () {
+    public function getMarca() {
         return $this->marca;
     }
 
-    public function getModelo () {
+    public function getModelo() {
         return $this->modelo;
     }
 
     public function getKm () {
         return $this->km;
     }
+
+    public function toString(){
+        
+        echo "<li>Matrícula: " . $this->matricula . "<br>";
+        echo "Marca: " . $this->marca . "<br>";
+        echo "Modelo: " . $this->modelo . "<br>";
+        echo "Km: " . $this->km . "</li><br>";
+    }
+
 }

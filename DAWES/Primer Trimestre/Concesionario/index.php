@@ -8,11 +8,27 @@
 <body>
     
 <?php
-    include("components/header.php");
 
-    include("clases/Coche.php");
-    include("repositories/CocheRepositoryRAM.php");
-    getCoches();
+    $matricula = $_GET["matricula"];
+
+    
+
+    include "components/header.php";
+    include __DIR__."/repositories/CocheRepositoryRAM.php";
+
+    $cochesRepositoryRAM = new CocheRepositoryRAM();
+
+    $arrayCoches = $cochesRepositoryRAM->getCoches();
+
+    echo "<ul>";
+
+    foreach ($arrayCoches as $coche){
+
+        $coche->toString();
+
+    }
+
+    echo "</ul>";
 ?>
 
 </body>

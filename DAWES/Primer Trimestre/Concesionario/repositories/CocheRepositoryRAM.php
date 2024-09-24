@@ -1,12 +1,14 @@
 <?php
 
-include "repositories/CocheRepository.php";
+include __DIR__."/CocheRepository.php";
+include __DIR__ . "/../clases/Coche.php";
 
 class CocheRepositoryRAM implements CocheRepository {
 
-    private $arrayCoches;
+    private $arrayCoches = [];
 
-    public function __constructor(){
+    public function __construct(){
+
         $coche1 = new Coche(123,"Opel" , "Corsa", 100000);
         $coche2 = new Coche(456, "Ford", "Focus", 5000);
         $coche3 = new Coche(789, "Citroen", "C15", 25000);
@@ -16,26 +18,17 @@ class CocheRepositoryRAM implements CocheRepository {
 
     public function getCoches(){
         
-        echo "<ul>";
-
-        foreach ($arrayCoches as $coche) {
-
-            echo "<li>Matricula: " . $coche->getMatricula() ."<br>";
-            echo "Marca: " . $coche->getMarca() ."<br>";
-            echo "Modelo: " . $coche->getModelo() ."<br>";
-            echo "Km: " . $coche->getKm() ."</li><br>";
-
-        }
-
-        echo "</ul>";
+        return $this->arrayCoches;
 
     }
 
     public function saveCoche($nuevoCoche){
         
         if($nuevoCoche instanceof Coche){
-            array_push($arrayCoches[$nuevoCoche]);
+            array_push($arrayCoches, $nuevoCoche);
         }
     }
+
+    
 
 }

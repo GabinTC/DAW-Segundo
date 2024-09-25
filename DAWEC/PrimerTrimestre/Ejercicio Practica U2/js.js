@@ -42,3 +42,34 @@ if (isNaN(numero)){
 console.log(typeof(numero));
 
 */
+
+// Pide al usuario que te indique su nombre, apellidos ,  edad y un número del 1 al 10. 
+// Almacena cada dato en una variable diferente.  A continuación muestra la siguiente información.
+//      Por consola una frase que incluya su nombre , apellidos y la edad.
+//      En el documento html incluye con formato h3 la misma información.
+//      En un alert muestra la siguiente información “Dentro de número años tendras x años”. 
+// Ayuda: usa los backticks para crear un template literal que te permita hacer este ejercicio
+
+/*
+
+let nombreUsuario = prompt("Nombre");
+let apellidoUsuario = prompt("Apellido");
+let edadUsuario = parseInt(prompt("Edad"));
+
+let calcular = parseInt(12);
+
+if (isNaN(edadUsuario) || isNaN(calcular)) {
+
+    alert("La edad es incorrecta");
+
+} else {
+
+    let edadResultado = calcular + edadUsuario;
+    
+
+    alert("Dentro de 12 años tendrás: " + edadResultado)
+
+}
+
+*/
+

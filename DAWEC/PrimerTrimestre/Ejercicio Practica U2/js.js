@@ -43,7 +43,7 @@ console.log(typeof(numero));
 
 */
 
-// Pide al usuario que te indique su nombre, apellidos ,  edad y un número del 1 al 10. 
+// Enunciado 3: Pide al usuario que te indique su nombre, apellidos ,  edad y un número del 1 al 10. 
 // Almacena cada dato en una variable diferente.  A continuación muestra la siguiente información.
 //      Por consola una frase que incluya su nombre , apellidos y la edad.
 //      En el documento html incluye con formato h3 la misma información.
@@ -72,4 +72,60 @@ if (isNaN(edadUsuario) || isNaN(calcular)) {
 }
 
 */
+
+
+// Enunciado 4: Pide al usuario un string, Muestra en el documento la posición que ocupa la primera “a”
+
+/*
+
+let mensajeUsuario = prompt("Dame una cadena de carácteres");
+
+let posicionPrimeraA = parseInt(mensajeUsuario.indexOf("a")) + 1;
+
+document.write("La posición de la primera A es: " + posicionPrimeraA);
+
+*/
+
+// Enunciado 5: Pide al usuario tres strings, debes sustituir en el primer string la primera ocurrencia del
+// segundo string por el contenido del tercer string. ejemplo
+// string 1 “Hola caracola”
+// string 2 “cara”
+// string 3 “era”
+// resultado a mostrar con un alert “Hola eracola”.
+
+/*
+
+let string1 = "Hola caracola";
+let string2 = "cara";
+let string3 = "era";
+
+let mensajeFinal = string1.replace(string2, string3);
+
+alert(mensajeFinal);
+
+*/
+
+// Enunciado 6: Amplía el ejercicio anterior a todas las ocurrencias.
+
+/*
+
+let string1 = prompt("Dame una cadena de carácteres");
+let string2 = prompt("Dime que parte quieres cambiar");
+let string3 = prompt("Dime por qué lo quieres cambiar");
+
+let mensajeFinal = string1.replace(string2, string3);
+
+alert(mensajeFinal);
+
+*/
+
+// Enunciado 7: Pide dos strings al usuario. Debes mostrar el número de veces que el
+// segundo string está incluido en el primero
+
+
+
+let string1 = prompt("Dime una cadena de carácteres");
+let string2 = prompt("Dame la cadena que quieres saber cuantas veces se repite");
+
+
 

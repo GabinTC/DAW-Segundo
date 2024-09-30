@@ -127,5 +127,8 @@ alert(mensajeFinal);
 let string1 = prompt("Dime una cadena de carácteres");
 let string2 = prompt("Dame la cadena que quieres saber cuantas veces se repite");
 
+contador = 0;
 
 
+
+document.write("Esa cadena se repite " + contador + "veces");

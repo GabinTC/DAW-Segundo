@@ -122,13 +122,93 @@ alert(mensajeFinal);
 // Enunciado 7: Pide dos strings al usuario. Debes mostrar el número de veces que el
 // segundo string está incluido en el primero
 
+/*
 
+let cadena = prompt("Dime una cadena de carácteres");
+let subCadena = prompt("Dame la cadena que quieres saber cuantas veces se repite");
 
-let string1 = prompt("Dime una cadena de carácteres");
-let string2 = prompt("Dame la cadena que quieres saber cuantas veces se repite");
+let contador = 0;
+let posicion = cadena.indexOf(subCadena);
 
-contador = 0;
+while (posicion !== -1)
+{
+    contador++;
 
+    posicion = cadena.indexOf(subCadena, posicion + 1)
+}
 
+document.write(subCadena + " se repite " + contador + " veces<br>");
 
-document.write("Esa cadena se repite " + contador + "veces");
+*/
+
+// Enunciado 8: ¿Cuáles son los resultados de estas expresiones?.
+// Anotalo en un comentario antes de ejecutarlo y luego compruébalo mostrándolo por consola.
+
+/*
+
+console.log("" + 1);
+console.log("" - 1);
+console.log(true + false);
+console.log(6 / "3");
+console.log("2" * "3");
+console.log(4 + 5 + "px");
+console.log("$" + 4 + 5);
+console.log("4" - 2);
+console.log("4px" - 2);
+console.log(" -9 " + 5);
+console.log(" -9 " - 5);
+console.log(null + 1);
+console.log(undefined + 1);
+console.log(" \t \n" - 2);
+
+*/
+
+// Enunciado 9: Arregla el código del ejemplo para que el resultado sea 3.
+
+/*
+
+let a = parseInt(prompt("¿Primer número?", 1));
+let b = parseInt(prompt("¿Primer número?", 2));
+
+alert(a + b);
+
+*/
+
+// Enunciado 10: ¿Cuáles son los valores finales de todas las variables a, b, c y d 
+// después del código a continuación?
+
+/*
+
+let a = 1, b = 1;
+let c = ++a;
+let d = b++;
+
+console.log(a + "\n" + b + "\n" + c + "\n" + d);
+
+*/
+
+// Enunciado 11: ¿Cuál será el resultado de las siguientes expresiones?
+
+/*
+
+console.log(5 > 4);                 // true
+console.log("apple" > "pinneaple"); // false
+console.log("2" > "12");            // false
+console.log(undefined == null);     // false
+console.log(undefined === null);    // false
+console.log(null == "\n0\n");       // false
+console.log(null === + "\n0\n");    // false
+
+*/
+
+// Enunciado 12: Usa el operador “?” para escribir un código que nos pida un número
+// y nos muestre un mensaje si es mayor o igual que cero y otro mensaje si 
+// es menor estricto que cero.
+
+/*
+
+let numero = prompt("Dime un número");
+
+numero >= 0 ? alert("Es mayor que cero") : alert("Es menor que 0");
+
+*/

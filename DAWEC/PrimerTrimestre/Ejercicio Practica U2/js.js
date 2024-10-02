@@ -183,7 +183,7 @@ let a = 1, b = 1;
 let c = ++a;
 let d = b++;
 
-console.log(a + "\n" + b + "\n" + c + "\n" + d);
+console.log(a + "\n" + b + "\n" + c + "\n" + d); // a = 2, b = 2, c = 2, d = 1
 
 */
 
@@ -212,3 +212,62 @@ let numero = prompt("Dime un número");
 numero >= 0 ? alert("Es mayor que cero") : alert("Es menor que 0");
 
 */
+
+// Enunciado 13: Crea un programa  utilizando la sentencia if else  que pida al usuario que introduzca una edad
+// y muestre el siguiente mensaje en función del número introducido:
+// 0-12: Niño
+// 13-26: Joven
+// 27-65: Adulto
+// >65: Jubilado
+
+/*
+
+let edad = parseInt(prompt("Dime tú edad"));
+
+if (edad >= 0 && edad <=12) {
+    alert("Niño");    
+} else if (edad >= 13 && edad <=26) {
+    alert("Joven");
+} else if (edad >= 27 && edad <=65) {
+    alert("Adulto");
+} else if (edad >= 66) {
+    alert("Jubilado");
+}
+
+*/
+
+// Enunciado 14: Mejora el ejercicio anterior de manera que le pregunte al usuario si quiere introducir otra edad .
+// También debe comprobar si es un número mayor que cero y en caso contrario pedir al usuario que lo intente otra vez 
+// hasta que sea correcto.
+
+
+
+
+    
+let edad = parseInt(prompt("Dime tú edad"));
+
+if (edad >= 0 && edad <=12) {
+    alert("Niño");    
+} else if (edad >= 13 && edad <=26) {
+    alert("Joven");
+} else if (edad >= 27 && edad <=65) {
+    alert("Adulto");
+} else if (edad >= 66) {
+    alert("Jubilado");
+} else {
+    prompt("Dime un número válido");
+}
+
+
+
+
+
+
+
+
+  
+     
+    
+    
+
+

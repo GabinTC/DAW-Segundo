@@ -240,34 +240,25 @@ if (edad >= 0 && edad <=12) {
 // También debe comprobar si es un número mayor que cero y en caso contrario pedir al usuario que lo intente otra vez 
 // hasta que sea correcto.
 
+/*
 
+do 
+{
+    var edad = prompt("Dime tú edad")
+} 
+while (!(edad > 0));
 
-
-    
-let edad = parseInt(prompt("Dime tú edad"));
-
-if (edad >= 0 && edad <=12) {
+if (edad <=12) {
     alert("Niño");    
 } else if (edad >= 13 && edad <=26) {
     alert("Joven");
 } else if (edad >= 27 && edad <=65) {
     alert("Adulto");
-} else if (edad >= 66) {
-    alert("Jubilado");
 } else {
-    prompt("Dime un número válido");
-}
+    alert("Jubilado");
+} 
 
+*/
 
-
-
-
-
-
-
-  
-     
-    
-    
 
 

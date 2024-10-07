@@ -4,6 +4,7 @@
 
     <label for="categoria">Categoría</label>
     <select name="categoria" id="">
+        <option value=""></option>
         <?php
             foreach (Categoria::cases() as $tipo)
             {
@@ -13,13 +14,13 @@
     </select>
 
     <fieldset>
-        <legend>Ordenar por:</legend>
+        <legend>Ordenar por precio</legend>
 
-        <label for="precio">Precio</label>
-        <input type="radio" name="orden" id="" value="precio">
+        <label for="precio">Alto-Bajo</label>
+        <input type="radio" name="orden" id="" value="masmenos">
 
-        <label for="precio">Nombre</label>
-        <input type="radio" name="orden" id="" value="nombre"> 
+        <label for="precio">Bajo-Alto</label>
+        <input type="radio" name="orden" id="" value="menosmas"> 
     </fieldset>
 
     <button>Buscar</button>

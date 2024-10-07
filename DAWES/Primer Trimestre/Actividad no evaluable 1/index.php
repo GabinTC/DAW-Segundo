@@ -20,12 +20,14 @@ include 'components/head.php';
     $filtroOrden = $_GET["orden"];
 
     foreach ($arrayProductos as $producto) {
-        if (str_contains($producto->getCategoria(), $filtroCategoria) || empty($filtroCategoria)) {
-            if (str_contains($producto->getNombre(), $filtroNombre) || empty($filtroNombre)) {
+        if (str_contains(strtolower($producto->getCategoria()), strtolower($filtroCategoria))  || empty($filtroCategoria)) {
+            if (str_contains(strtolower($producto->getNombre()) , strtolower($filtroNombre) ) || empty($filtroNombre)) {
                 printf("<h1>%s</h1><p>%s</p><p>%s</p>", $producto->getNombre(), $producto->getDescripcion(), $producto->getPrecio());
             } 
         } 
     }
+
+    echo $filtroOrden;
 
     echo "noerror";
 

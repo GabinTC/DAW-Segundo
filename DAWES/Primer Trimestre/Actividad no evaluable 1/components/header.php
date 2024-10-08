@@ -13,15 +13,11 @@
         ?>
     </select>
 
-    <fieldset>
-        <legend>Ordenar por precio</legend>
+    <label for="precio">Alto-Bajo</label>   
+    <input type="radio" name="orden" id="" value="masmenos">
 
-        <label for="precio">Alto-Bajo</label>
-        <input type="radio" name="orden" id="" value="masmenos">
-
-        <label for="precio">Bajo-Alto</label>
-        <input type="radio" name="orden" id="" value="menosmas"> 
-    </fieldset>
+    <label for="precio">Bajo-Alto</label>
+    <input type="radio" name="orden" id="" value="menosmas"> 
 
     <button>Buscar</button>
 </form>

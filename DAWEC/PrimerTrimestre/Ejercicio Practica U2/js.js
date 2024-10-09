@@ -242,23 +242,49 @@ if (edad >= 0 && edad <=12) {
 
 /*
 
-do 
-{
-    var edad = prompt("Dime tú edad")
-} 
-while (!(edad > 0));
+let edad = prompt("Dime tú edad");
 
-if (edad <=12) {
-    alert("Niño");    
-} else if (edad >= 13 && edad <=26) {
-    alert("Joven");
-} else if (edad >= 27 && edad <=65) {
-    alert("Adulto");
-} else {
-    alert("Jubilado");
-} 
+if (!(edad > 0)) {
+
+    do {
+        edad = prompt("Dime una edad válida");
+    }while (!(edad > 0));
+
+}
+
+    if (edad <= 12) {
+        alert("Niño");
+    } else if (edad >= 13 && edad <= 26) {
+        alert("Joven");
+    } else if (edad >= 27 && edad <= 65) {
+        alert("Adulto");
+    } else {
+        alert("Jubilado");
+    }
 
 */
+    
+// Enunciado 15: Construye un programa que pida   un número del 1 al 10 al usuario, 
+// luego muestra por pantalla la tabla de multiplicar de ese número hasta 10. 
+// Para ello muestra en líneas diferentes el siguiente mensaje: “ 8 por 1 = 8” y así sucesivamente.
+// Suponiendo que el usuario hubiera introducido un 8.
 
 
 
+let numero = prompt("Dime un número del 1 al 10");
+
+if (!(numero > 0) || !(numero < 10)) {
+
+    do {
+        numero = prompt("Dime un número válido");
+    }while (!(numero > 0) || !(numero < 10));
+
+}
+
+for (let i = 0; i < 11; i++) {
+
+    document.write("La tabla del " + numero + " es: ");
+    document.write("<br>");
+    document.write(numero * i);
+    
+}

@@ -263,12 +263,13 @@ if (!(edad > 0)) {
     }
 
 */
-    
+
 // Enunciado 15: Construye un programa que pida   un número del 1 al 10 al usuario, 
 // luego muestra por pantalla la tabla de multiplicar de ese número hasta 10. 
 // Para ello muestra en líneas diferentes el siguiente mensaje: “ 8 por 1 = 8” y así sucesivamente.
 // Suponiendo que el usuario hubiera introducido un 8.
 
+/*
 
 
 let numero = prompt("Dime un número del 1 al 10");
@@ -281,10 +282,85 @@ if (!(numero > 0) || !(numero < 10)) {
 
 }
 
+document.write("La tabla del " + numero + " es: <br>");
+
 for (let i = 0; i < 11; i++) {
 
-    document.write("La tabla del " + numero + " es: ");
-    document.write("<br>");
-    document.write(numero * i);
+    document.write(numero + " * " + i + " = " + numero * i + "<br>");
+
+}
+
+*/
+
+// Enunciado 16: Crea un programa que sea un “pequeño traductor” de nombres de frutas. A partir de una lista de 5 Frutas en español 
+// (“Pera”, “Manzana”,”Piña”,”Fresa”,”Naranja”) el programa pedirá al usuario el nombre de una fruta, en el caso de que corresponda
+// al listado le mostrará en un cuadro de diálogo la traducción al Inglés. En el caso de otro texto mostrará “Fruta desconocida”.
+// Para este ejercicio debes usar una estructura switch. 
+
+/*
+
+let fruta = prompt("Dime una fruta");
+
+switch (fruta) {
+    case 'pera':
+        alert("Inglés: pear")
+        break;
+    case 'manzana':
+        alert("Inglés: apple")
+        break;
+    case 'piña':
+        alert("Inglés: pineapple")
+        break;
+    case 'fresa':
+        alert("Inglés: strawberry")
+        break;
+    case 'naranja':
+        alert("Inglés: orange")
+        break;
+    default:
+        alert("No hay traducción")
+        break;
+}
+
+*/
+
+// Enunciado 17: Mejora el anterior ejercicio de manera que el programa traduzca correctamente a pesar de que la
+//  primera letra esté indistintamente en mayúscula o en minúscula. ¿Y si cualquier letra está en mayúscula o minúscula indistintamente?
+
+/*
+
+let fruta = prompt("Dime una fruta");
+
+switch (fruta.toLowerCase()) {
+    case 'pera':
+        alert("Inglés: pear")
+        break;
+    case 'manzana':
+        alert("Inglés: apple")
+        break;
+    case 'piña':
+        alert("Inglés: pineapple")
+        break;
+    case 'fresa':
+        alert("Inglés: strawberry")
+        break;
+    case 'naranja':
+        alert("Inglés: orange")
+        break;
+    default:
+        alert("No hay traducción")
+        break;
+}
+
+*/
+
+// Enunciado 20: Escribe tres funciones suma que acepte un número indeterminado de argumentos y devuelva la suma de todos ellos.
+// Debes evitar que la función devuelva “undefined” si no se le pasa ningún argumento, en cuyo caso el valor que devuelva tiene que ser 0.
+// Debes escribir cada versión de la función  de las tres formas que hemos visto.
+//      suma1 , declaración tradicional de una función
+//      suma2, función como expresión.
+//      suma3, función flecha.
+
+function metodoSuma1 () {
     
 }

@@ -5,15 +5,16 @@
     <title>Nuevo usuario</title>
 </head>
 <body>
+<div th:insert="fragments/nav"></div>
 <form action="/guardar_usuario" method="post">
     <label for="nombre">Nombre</label>
-    <input type="text" name="nombre">
+    <input name="nombre">
     
     <label for="correo">Correo</label>
-    <input type="text" name="email">
+    <input name="email">
 
     <label for="password">Contraseña</label>
-    <input type="text" name="password">
+    <input type="password" name="password">
 
     <button>Registrarse</button>
 </form>

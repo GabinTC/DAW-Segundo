@@ -1,56 +1,36 @@
 package com.example.demo.controller;
 
 import com.example.demo.clases.Usuario;
-import com.example.demo.repository.Usuarios.UsuarioRepository;
-import com.example.demo.repository.Usuarios.UsuarioRepositoryRAM;
+import com.example.demo.repository.UsuarioRepository;
+import com.example.demo.repository.UsuarioRepositoryRAM;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-
-import java.util.HashSet;
-import java.util.List;
 
 @Controller
 public class UsuarioController {
 
-    UsuarioRepository usuarioRepository;
+    UsuarioRepository usuarioRepository = new UsuarioRepositoryRAM();
 
-    public UsuarioController() {
-        this.usuarioRepository = new UsuarioRepositoryRAM();
+    @GetMapping("/registro")
+    public String registro(Model model) {
+
+        return "registro";
     }
+    @PostMapping("/registro")
+    public String guardarUsuario(Model model, String nombre, String email, String password){
 
-    @GetMapping("/registrarse")
-    public String nuevoUsuario(Model model){
+        this.usuarioRepository.guardarUsuario(new Usuario(nombre, email, password));
 
-        return "registrarse";
+        return "redirect:/index?nombre=" + nombre;
     }
-
-
-    @PostMapping("/guardar_usuario")
-    public String guardarUsuario(String nombre, String email, String password, Model model) {
-
-        Usuario usuarioGuardado = new Usuario(nombre, email, password);
-        this.usuarioRepository.guardarUsuario(usuarioGuardado);
-
-
-
-        return "redirect:/index";
-    }
-
-
-
-
-
-
 
     @GetMapping("/usuarios")
-    public String usuarios(Model model){
+    public String usuarios(Model model) {
 
-        List<Usuario> usuarios = this.usuarioRepository.getUsuarios();
-        model.addAttribute("usuarios", usuarios);
+        model.addAttribute("usuarios", this.usuarioRepository.getUsuarios());
 
-        return "para_pruebas/usuarios";
+        return "usuarios";
     }
 }

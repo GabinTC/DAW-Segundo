@@ -13,7 +13,7 @@ let var6 = 0x1A57;
 let arrayVariables = [var1, var2, var3, var4, var5, var6];
 
 arrayVariables.forEach(variable => {
-    
+
     console.log(variable + ", tipo: " + typeof(variable));
 
 });
@@ -36,7 +36,7 @@ if (isNaN(numero)){
 } else {
 
     alert("El número es " + numero);
-    
+
 }
 
 console.log(typeof(numero));
@@ -65,7 +65,7 @@ if (isNaN(edadUsuario) || isNaN(calcular)) {
 } else {
 
     let edadResultado = calcular + edadUsuario;
-    
+
 
     alert("Dentro de 12 años tendrás: " + edadResultado)
 
@@ -225,7 +225,7 @@ numero >= 0 ? alert("Es mayor que cero") : alert("Es menor que 0");
 let edad = parseInt(prompt("Dime tú edad"));
 
 if (edad >= 0 && edad <=12) {
-    alert("Niño");    
+    alert("Niño");
 } else if (edad >= 13 && edad <=26) {
     alert("Joven");
 } else if (edad >= 27 && edad <=65) {
@@ -361,6 +361,47 @@ switch (fruta.toLowerCase()) {
 //      suma2, función como expresión.
 //      suma3, función flecha.
 
-function metodoSuma1 () {
-    
+/* 
+
+function suma1(...numeros) {
+
+    if (numeros.length == 0){
+        return 0;
+    }
+
+    let suma = 0;
+
+    for (let index = 0; index < numeros.length; index++) {
+
+        suma += numeros[index];
+
+    }
+
+    return suma;
 }
+
+alert(suma1(1, 2, 3, 4, 5, 6, 9));
+
+
+function suma2(...numeros){
+
+    if (numeros.length == 0){
+        return 0;
+    }
+    
+    return numeros.reduce((contador, valorActual) => contador + valorActual); 
+}
+
+alert(suma2(1, 2, 3, 4, 5, 6, 9));
+
+*/
+
+(a = 1, b = 2) => {
+
+    let suma = a + b + a;
+
+    return alert(suma);
+
+}
+
+    

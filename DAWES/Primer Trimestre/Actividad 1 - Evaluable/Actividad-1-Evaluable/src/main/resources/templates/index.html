@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="UTF-8">
-    <title>Index</title>
-</head>
+<head th:replace="components/head"></head>
 <body>
 <div th:include="components/nav"></div>
-<div th:each="post : ${posts}">
-    <p th:text="${post.texto}"></p>
+<div class="container-posts">
+    <div class="container-post" th:each="post : ${posts}">
+        <p th:text="${post.alias}"></p>
+        <p th:text="${post.texto}"></p>
+        <div class="container-fecha-post">
+            <p>Likes</p>
+            <p th:text="${post.fechaPublicacion}"></p>
+        </div>
+    </div>
 </div>
+
+<p th:text="${buscarPorTexto}"></p>
 </body>
 </html>

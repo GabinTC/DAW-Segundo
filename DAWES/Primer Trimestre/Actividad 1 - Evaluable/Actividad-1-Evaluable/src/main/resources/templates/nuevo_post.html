@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="UTF-8">
-    <title>Nuevo post</title>
-</head>
+<head th:replace="components/head"></head>
+
 <body>
 <div th:insert="components/nav"></div>
 <form action="/guardar_post" method="post">
-    <label for="texto">Texto</label>
-    <input name="texto">
+    <div class="container-textarea-post">
+        <label for="texto">Texto</label>
+        <textarea name="texto"></textarea>
+    </div>
+
 
     <button>Subir</button>
 </form>

@@ -22,8 +22,6 @@ public class UsuarioController {
 
         DAOFactory.getInstance().getDaoUsuario().guardarUsuario(usuario);
 
-        model.addAttribute("usuario", usuario);
-
         return "redirect:/index";
     }
 

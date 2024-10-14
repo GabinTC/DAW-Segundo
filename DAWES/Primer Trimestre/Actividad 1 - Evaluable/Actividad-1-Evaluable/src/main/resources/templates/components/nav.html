@@ -1,6 +1,28 @@
 <nav>
-    <a href="/index">Index</a>
-    <a href="/registro">Registro</a>
-    <a href="/usuarios">Usuarios</a>
-    <a href="/nuevo_post">Nuevo post</a>
+    <div class="container-index">
+        <a href="/index">Index</a>
+    </div>
+    <div class="container-barra-busqueda">
+        <a href="/usuarios">Usuarios</a>
+        <form action="/index" method="get">
+            <div>
+                <input name="filtrarPostFecha" type="date" placeholder="Fecha de publicación">
+                <input name="filtrarPostTexto" type="text" placeholder="Buscar texto">
+                <input name="filtrarPostUsuario" type="text" placeholder="Usuario">
+            </div>
+            <div>
+                <input type="radio" value="asc" name="ordenFecha" id="ordenAsc">
+                <label for="ordenAsc">Ascendente</label>
+                <input type="radio" value="desc" name="ordenFecha" id="ordenDesc">
+                <label for="ordenDesc">Descendente</label>
+                <button>Filtrar</button>
+            </div>
+
+
+        </form>
+        <a href="/nuevo_post">Nuevo post</a>
+    </div>
+    <div class="container-register">
+        <a href="/registro">Registro</a>
+    </div>
 </nav>

@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="UTF-8">
-    <title>Registro</title>
-</head>
+<head th:replace="components/head"></head>
 <body>
 <div th:include="components/nav"></div>
 <form action="/registro" method="post">
@@ -14,7 +11,7 @@
     <input name="email">
 
     <label for="password">Contraseña</label>
-    <input name="password">
+    <input type="password" name="password">
 
     <button>Registrarse</button>
 </form>

@@ -10,7 +10,7 @@ include 'components/head.php';
     <?php
     include 'clases/Categoria.php';
     include 'components/header.php';
-    include 'repositories/ProductoRepositoryRAM.php';
+    include_once 'repositories/ProductoRepositoryRAM.php';
 
     $productoRepositoryRAM = new ProductoRepositoryRAM();
     $arrayProductos = $productoRepositoryRAM->getProductos();

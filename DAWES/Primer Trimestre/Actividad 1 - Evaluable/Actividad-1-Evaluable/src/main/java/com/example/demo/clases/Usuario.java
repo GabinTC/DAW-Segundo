@@ -13,6 +13,7 @@ public class Usuario {
         this.email = email;
         this.password = password;
         this.posts = new ArrayList<>();
+
     }
 
     public String getNombre() {

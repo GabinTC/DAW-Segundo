@@ -6,11 +6,12 @@ public class Post {
 
     private String texto;
     private LocalDate fechaPublicacion;
-    private Usuario usuario;
+    private String alias;
 
-    public Post(String texto, LocalDate fechaPublicacion) {
+    public Post(String texto) {
         this.texto = texto;
-        this.fechaPublicacion = fechaPublicacion;
+        this.fechaPublicacion = LocalDate.now();
+        this.alias = alias;
     }
 
     public String getTexto() {
@@ -21,7 +22,11 @@ public class Post {
         return fechaPublicacion;
     }
 
-    public Usuario getUsuario(){
-        return this.usuario;
+    public String getAlias(){
+        return this.alias;
+    }
+
+    public void setAlias(String alias){
+        this.alias = alias;
     }
 }

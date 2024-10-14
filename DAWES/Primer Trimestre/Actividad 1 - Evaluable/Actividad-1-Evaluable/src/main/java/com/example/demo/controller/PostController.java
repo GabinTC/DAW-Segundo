@@ -5,6 +5,7 @@ import com.example.demo.clases.Usuario;
 import com.example.demo.dao.DAOFactory;
 import com.example.demo.dao.DAOPost.DAOPost;
 import com.example.demo.dao.DAOPost.DAOPostRAM;
+import org.springframework.cglib.core.Local;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,18 +15,22 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Controller
 public class PostController {
 
     @GetMapping("/index")
-    public String index(@RequestBody(required = false) Usuario usuario, Model model){
+    public String index(Model model, String filtrarPostTexto, String filtrarPostUsuario, LocalDate filtrarPostFecha, String ordenFecha) {
 
-        ArrayList<Post> posts = (ArrayList<Post>) DAOFactory.getInstance().getDAOPost().getPosts();
-        model.addAttribute("posts", posts);
+        List<Post> postsFiltrados = DAOFactory.getInstance().getDAOPost().filtrarPosts(filtrarPostTexto, filtrarPostUsuario, filtrarPostFecha, ordenFecha);
+
+        model.addAttribute("posts", postsFiltrados);
 
         return "index";
     }
+
     @GetMapping("/nuevo_post")
     public String nuevoPost(Model model) {
 
@@ -34,21 +39,11 @@ public class PostController {
     @PostMapping("/guardar_post")
     public String guardarPost(Model model, String texto){
 
-        Post post = new Post(texto, LocalDate.now());
+        Usuario usuario = DAOFactory.getInstance().getDaoUsuario().findByNombre("Fernando Torres");
 
-        DAOFactory.getInstance().getDAOPost().guardarPost(post);
-
-        model.addAttribute("post", post);
+        Post post = new Post(texto);
+        DAOFactory.getInstance().getDAOPost().guardarPost(post, usuario);
 
         return "redirect:/index";
     }
-
-    @GetMapping("/posts")
-    public String posts(Model model) {
-
-        model.addAttribute("usuarios", DAOFactory.getInstance().getDAOPost().getPosts());
-
-        return "posts";
-    }
-
 }

@@ -6,7 +6,8 @@
 </head>
 <body>
 <div th:include="components/nav"></div>
-<p th:text="${nombre}"></p>
-<p th:text="${texto}"></p>
+<div th:each="post : ${posts}">
+    <p th:text="${post.texto}"></p>
+</div>
 </body>
 </html>

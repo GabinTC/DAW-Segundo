@@ -1,11 +1,10 @@
-package com.example.demo.repository;
+package com.example.demo.dao.DAOPost;
 
 import com.example.demo.clases.Post;
-import com.example.demo.clases.Usuario;
 
 import java.util.List;
 
-public interface PostRepository {
+public interface DAOPost {
     List<Post> getPosts();
     void guardarPost(Post post);
 }

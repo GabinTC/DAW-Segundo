@@ -6,6 +6,7 @@ public class Post {
 
     private String texto;
     private LocalDate fechaPublicacion;
+    private Usuario usuario;
 
     public Post(String texto, LocalDate fechaPublicacion) {
         this.texto = texto;
@@ -18,5 +19,9 @@ public class Post {
 
     public LocalDate getFechaPublicacion() {
         return fechaPublicacion;
+    }
+
+    public Usuario getUsuario(){
+        return this.usuario;
     }
 }

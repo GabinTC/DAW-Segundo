@@ -1,8 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.clases.Usuario;
-import com.example.demo.repository.UsuarioRepository;
-import com.example.demo.repository.UsuarioRepositoryRAM;
+import com.example.demo.dao.DAOFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,8 +9,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class UsuarioController {
-
-    UsuarioRepository usuarioRepository = new UsuarioRepositoryRAM();
 
     @GetMapping("/registro")
     public String registro(Model model) {
@@ -21,15 +18,19 @@ public class UsuarioController {
     @PostMapping("/registro")
     public String guardarUsuario(Model model, String nombre, String email, String password){
 
-        this.usuarioRepository.guardarUsuario(new Usuario(nombre, email, password));
+        Usuario usuario = new Usuario(nombre, email, password);
 
-        return "redirect:/index?nombre=" + nombre;
+        DAOFactory.getInstance().getDaoUsuario().guardarUsuario(usuario);
+
+        model.addAttribute("usuario", usuario);
+
+        return "redirect:/index";
     }
 
     @GetMapping("/usuarios")
     public String usuarios(Model model) {
 
-        model.addAttribute("usuarios", this.usuarioRepository.getUsuarios());
+        model.addAttribute("usuarios", DAOFactory.getInstance().getDaoUsuario().getUsuarios());
 
         return "usuarios";
     }

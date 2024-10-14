@@ -1,11 +1,11 @@
-package com.example.demo.repository;
+package com.example.demo.dao.DAOUsuario;
 
 import com.example.demo.clases.Usuario;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class UsuarioRepositoryRAM implements UsuarioRepository{
+public class DAOUsuarioRAM implements DAOUsuario {
 
     List<Usuario> usuarios = new ArrayList<>();
 
@@ -16,5 +16,15 @@ public class UsuarioRepositoryRAM implements UsuarioRepository{
     @Override
     public List<Usuario> getUsuarios() {
         return this.usuarios;
+    }
+
+    @Override
+    public Usuario findByNombre(String nombre){
+        for (Usuario usuario : this.usuarios){
+            if (usuario.getNombre().equals(nombre)){
+                return usuario;
+            }
+        }
+        return null;
     }
 }

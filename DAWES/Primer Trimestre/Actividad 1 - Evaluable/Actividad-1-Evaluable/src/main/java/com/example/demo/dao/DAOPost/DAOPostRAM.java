@@ -1,11 +1,11 @@
-package com.example.demo.repository;
+package com.example.demo.dao.DAOPost;
 
 import com.example.demo.clases.Post;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class PostRepositoryRAM implements PostRepository{
+public class DAOPostRAM implements DAOPost {
 
     List<Post> posts = new ArrayList<>();
 

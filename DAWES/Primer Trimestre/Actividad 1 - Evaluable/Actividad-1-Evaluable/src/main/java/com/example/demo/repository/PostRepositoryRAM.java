@@ -1,4 +1,4 @@
-package com.example.demo.repository.Posts;
+package com.example.demo.repository;
 
 import com.example.demo.clases.Post;
 
@@ -7,7 +7,7 @@ import java.util.List;
 
 public class PostRepositoryRAM implements PostRepository{
 
-    private ArrayList<Post> posts;
+    List<Post> posts = new ArrayList<>();
 
     @Override
     public List<Post> getPosts() {

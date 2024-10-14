@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="es" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Index</title>
 </head>
 <body>
-<h1>hola</h1>
-<div th:insert="fragments/nav"></div>
+<div th:include="components/nav"></div>
+<p th:text="${nombre}"></p>
+<p th:text="${texto}"></p>
 </body>
 </html>

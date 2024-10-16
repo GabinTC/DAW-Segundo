@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="fragments/head"></head>
+<body>
+<div th:insert="fragments/nav"></div>
+<div >
+    <form class="nueva" action="/guardar_pelicula" method="post">
+        <label for="titulo">Titulo</label>
+        <input name="titulo" id="titulo">
+        <label for="director">Director</label>
+        <select id="director">
+            <option value="">-Nada-</option>
+            <option th:each="director : ${directores}" th:value="${director.nombre}" th:text="${director.nombre}"></option>
+        </select>
+
+        <label for="year">Año</label>
+        <input name="year" id="year">
+        <label for="genero">Género</label>
+
+        <select id="genero">
+            <option value="">-Nada-</option>
+            <option th:each="genero : ${generos}" th:value="${genero.nombre}" th:text="${genero.nombre}"></option>
+        </select>
+
+        <button>Guardar</button>
+    </form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<nav>
+    <ul>
+        <li><a href="/">Index</a></li>
+        <li><a href="/nueva">Nueva</a></li>
+    </ul>
+</nav>
+<h1>Películas</h1>
+<form action="/" method="get" xmlns:th="http://www.w3.org/1999/xhtml">
+    <div class="filter">
+        <input name="titulo" class="filter" placeholder="Título">
+        <select id="director" name="director">
+            <option value="" selected>-Nada-</option>
+            <option th:each="director : ${directores}" th:value="${director.nombre}" th:text="${director.nombre}"></option>
+        </select>
+        <input name="year" class="filter" placeholder="Año">
+        <select id="genero" name="genero">
+            <option value="" selected>-Nada-</option>
+            <option th:each="genero : ${generos}" th:value="genero.nombre" th:text="${genero.nombre}"></option>
+        </select>
+        <button>Filtrar</button>
+    </div>
+</form>
+

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="fragments/head"></head>
+<body>
+  <div th:include="fragments/nav"></div>
+  <div class="peliculas">
+    <div class="pelicula" th:each="pelicula : ${peliculas}">
+      <p th:text="${pelicula.titulo}"></p>
+      <p th:text="${pelicula.year}"></p>
+      <p th:text="${pelicula.nombreDirector}"></p>
+      <p th:text="${pelicula.genero}"></p>
+    </div>
+  </div>
+</body>
+<footer th:replace="fragments/footer"></footer>
+</html>

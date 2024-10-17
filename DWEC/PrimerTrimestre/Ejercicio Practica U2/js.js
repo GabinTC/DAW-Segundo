@@ -486,80 +486,145 @@ alert(arraySinDuplicados)
 // Enunciado 26: Usando el siguiente array que contiene una lista de nombres de países vamos a crear una serie de funciones para
 // realizar diferentes operaciones sobre ese array. 
 
+
+
 const paises = ["México", "Japón", "Italia", "Australia", "Brasil", "Canadá", "Francia", "Alemania", "India", "Argentina", "España", "China", "Sudáfrica", "Rusia", "Corea del Sur", "Reino Unido", "Estados Unidos", "Indonesia", "Egipto", "Turquía"];
 
 
-    // Función mostrarArray. Nos muestra en el documento HTML el número de elementos del array y
-    // a continuación el contenido del array en una lista numerada (ol)
 
-    /*
+// 1 - Función mostrarArray. Nos muestra en el documento HTML el número de elementos del array y
+// a continuación el contenido del array en una lista numerada (ol)
+
+/*
+
+function mostrarArray(arrayPaises) {
+    document.write("<ol>")
+
+    paises.forEach(pais => {
+
+        document.write("<li>" + pais + "</li><br>");
+    });
+
+    document.write("</ol>")
+}
+
+*/
+
+// 2 - Función mostrarArrayAlreves. Igual que la anterior pero antes de mostrarlo lo ordena en sentido inverso.
+// El array queda modificado.
+
+/*
+
+function mostrarArrayAlreves(arrayPaises) {
+    document.write("<ol>")
+
+    paises.reverse().forEach(pais => {
+
+        document.write("<li>" + pais + "</li><br>");
+    });
+
+    document.write("</ol>")
+}
+
+*/
+
+// 3 - Función añadirElemento. Nos debe pedir un elemento y preguntarnos si lo queremos añadir al principio, al final o en una posición concreta. 
+// Después lo añadimos en dicha posición y lo mostramos con la función mostrarArray.
+
+/*
+
+function añadirElemento(arrayPaises) {
+    let paisNuevo = prompt("Dime un país");
+    let posicion = prompt("Dime en que posicion lo quieres (1-20)");
+
+    paises.splice(parseInt(posicion) - 1, 0, paisNuevo);
+
+    document.write("<ol>")
+
+    paises.forEach(pais => {
+
+        document.write("<li>" + pais + "</li><br>");
+    });
+
+    document.write("</ol>")
+}
+
+*/
+
+// 4 - Función eliminarElementoPosicion. La función debe dar la opción de eliminar al principio, 
+// al final o en una posición dada por el usuario. Después mostramos el array modificado con la función mostrarArray
+
+/*
+
+function eliminarElementoPosicion(arrayPaises) {
+    let opcionEliminar = prompt("- Borrar el primer país (1)\n" + 
+        "- Borrar el último país (2)\n" + 
+        "- Elegir la posición a borrar (3)(Francia está el 6º)");
+
+        switch(opcionEliminar){
+
+            case "1":
+                paises.splice(0, 1);
+                break;
+            case "2":
+                paises.splice(paises.lastIndexOf(), 1)
+                break;
+            case "3":
+                let posicionAEliminar = prompt("Dime la posición que quieras eliminar");
+                paises.splice(parseInt(posicionAEliminar) - 1, 1);
+                break;
+        }
+
+        document.write("<ol>")
+
+        paises.forEach(pais => {
+    
+            document.write("<li>" + pais + "</li><br>");
+        });
+    
+        document.write("</ol>")
+}
+
+*/
+
+// 5 - Función buscarPais. La función nos devuelve la posición de una país, o -1 si no lo encuentra.
+
+/*
+
+function buscarPais(arrayPaises) {
+    let paisBuscado = prompt("Que país estás buscando?");
+
+    return arrayPaises.indexOf(paisBuscado);
+
+}
+
+*/
+
+// 6 - Función añadirPais. La función nos comprueba si un país que nos pasa el usuario existe
+// y en caso de que no exista lo inserta al final. 
+// Si existe lo indica con un mensaje indicando la posición. 
+// La función devuelve la posición en la que está el país, o la posición en la que lo ha insertado.
+
+function aniadirPais(arrayPaises) {
+    let paisAniadir = prompt("Dime que país quieres añadir(Israel no está permitido)");
+
+    if(arrayPaises.indexOf(paisAniadir) == -1 || pais == "Israel"){
+        return "No se puede, ya existe (o es Israel). Ese país esta en la posición " + arrayPaises.indexOf(paisAniadir);
+    }
+
+    arrayPaises.push(paisAniadir);
+
+    return paisAñadir + " se añadió en la posición " + arrayPaises.indexOf(paisAniadir);
+}
+
+let msj = aniadirPais(paises);
+alert(msj);
 
 document.write("<ol>")
 
-paises.forEach(pais => {
+        paises.forEach(pais => {
     
-    document.write("<li>" + pais + "</li><br>");
-});
-
-document.write("</ol>")
-
-    */
-
-    // Función mostrarArrayAlreves. Igual que la anterior pero antes de mostrarlo lo ordena en sentido inverso.
-    // El array queda modificado.
-
-    /*
-
-document.write("<ol>")
-
-paises.reverse().forEach(pais => {
+            document.write("<li>" + pais + "</li><br>");
+        });
     
-    document.write("<li>" + pais + "</li><br>");
-});
-
-document.write("</ol>")
-
-    */
-
-    // Función añadirElemento. Nos debe pedir un elemento y preguntarnos si lo queremos añadir al principio, al final o en una posición concreta. 
-    // Después lo añadimos en dicha posición y lo mostramos con la función mostrarArray.
-
-    /*
-
-let paisNuevo = prompt("Dime un país");
-let posicion = prompt("Dime en que posicion lo quieres (1-20)");
-
-paises.splice(parseInt(posicion) - 1, 0,paisNuevo);
-
-document.write("<ol>")
-
-paises.forEach(pais => {
-    
-    document.write("<li>" + pais + "</li><br>");
-});
-
-document.write("</ol>")
-
-    */
-
-    // Función eliminarElementoPosicion. La función debe dar la opción de eliminar al principio, 
-    // al final o en una posición dada por el usuario. Después mostramos el array modificado con la función mostrarArray
-
-    /*
-
-let posicionAEliminar = prompt("Dime laposicion que quieras eliminar");
-
-paises.splice(parseInt(posicionAEliminar) - 1, 1);
-
-document.write("<ol>")
-
-paises.forEach(pais => {
-    
-    document.write("<li>" + pais + "</li><br>");
-});
-
-document.write("</ol>")
-
-    */
-
-    //
+        document.write("</ol>")

@@ -471,8 +471,95 @@ alert(arrayPalabras.reduce((palabra, palabraActual) => {
 
 // Enunciado 25: Elimina los elementos duplicados de un array. (Usa la estructura Set como ayuda)
 
+/*
+
 let array = [1,23,6,1,23,3,3,2,2,3,53,52,1,"h","h"];
 
 let arraySet = new Set(array);
 
-alert();
+let arraySinDuplicados = Array.from(arraySet);
+
+alert(arraySinDuplicados)
+
+*/
+
+// Enunciado 26: Usando el siguiente array que contiene una lista de nombres de países vamos a crear una serie de funciones para
+// realizar diferentes operaciones sobre ese array. 
+
+const paises = ["México", "Japón", "Italia", "Australia", "Brasil", "Canadá", "Francia", "Alemania", "India", "Argentina", "España", "China", "Sudáfrica", "Rusia", "Corea del Sur", "Reino Unido", "Estados Unidos", "Indonesia", "Egipto", "Turquía"];
+
+
+    // Función mostrarArray. Nos muestra en el documento HTML el número de elementos del array y
+    // a continuación el contenido del array en una lista numerada (ol)
+
+    /*
+
+document.write("<ol>")
+
+paises.forEach(pais => {
+    
+    document.write("<li>" + pais + "</li><br>");
+});
+
+document.write("</ol>")
+
+    */
+
+    // Función mostrarArrayAlreves. Igual que la anterior pero antes de mostrarlo lo ordena en sentido inverso.
+    // El array queda modificado.
+
+    /*
+
+document.write("<ol>")
+
+paises.reverse().forEach(pais => {
+    
+    document.write("<li>" + pais + "</li><br>");
+});
+
+document.write("</ol>")
+
+    */
+
+    // Función añadirElemento. Nos debe pedir un elemento y preguntarnos si lo queremos añadir al principio, al final o en una posición concreta. 
+    // Después lo añadimos en dicha posición y lo mostramos con la función mostrarArray.
+
+    /*
+
+let paisNuevo = prompt("Dime un país");
+let posicion = prompt("Dime en que posicion lo quieres (1-20)");
+
+paises.splice(parseInt(posicion) - 1, 0,paisNuevo);
+
+document.write("<ol>")
+
+paises.forEach(pais => {
+    
+    document.write("<li>" + pais + "</li><br>");
+});
+
+document.write("</ol>")
+
+    */
+
+    // Función eliminarElementoPosicion. La función debe dar la opción de eliminar al principio, 
+    // al final o en una posición dada por el usuario. Después mostramos el array modificado con la función mostrarArray
+
+    /*
+
+let posicionAEliminar = prompt("Dime laposicion que quieras eliminar");
+
+paises.splice(parseInt(posicionAEliminar) - 1, 1);
+
+document.write("<ol>")
+
+paises.forEach(pais => {
+    
+    document.write("<li>" + pais + "</li><br>");
+});
+
+document.write("</ol>")
+
+    */
+
+    //

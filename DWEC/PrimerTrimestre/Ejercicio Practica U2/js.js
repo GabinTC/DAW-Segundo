@@ -361,7 +361,7 @@ switch (fruta.toLowerCase()) {
 //      suma2, función como expresión.
 //      suma3, función flecha.
 
-/* 
+/*
 
 function suma1(...numeros) {
 
@@ -382,7 +382,6 @@ function suma1(...numeros) {
 
 alert(suma1(1, 2, 3, 4, 5, 6, 9));
 
-
 function suma2(...numeros){
 
     if (numeros.length == 0){
@@ -394,14 +393,173 @@ function suma2(...numeros){
 
 alert(suma2(1, 2, 3, 4, 5, 6, 9));
 
-*/
+let suma3 = (...numeros) => {
 
-(a = 1, b = 2) => {
-
-    let suma = a + b + a;
-
-    return alert(suma);
+    if (numeros.length == 0){
+        return 0;
+    }
+    
+    return numeros.reduce((contador, valorActual) => contador + valorActual);
 
 }
 
+alert(suma3(1,2,3,4,5,6,9));
+
+*/
+
+// Enunciado 21: scribe una función denominada “operacionesEncadenadas” con los siguientes argumentos
+//      Dos valores que actuarán de datos para las operaciones.
+//      El tercero y cuarto dos funciones callback que definiremos aparte. La primera devolverá la suma de los dos datos. La segunda el producto
+//      El último argumento será una función callback que pasaremos en la llamada a la función  como función flecha con un mensaje por pantalla al usuario
+
+/*
+
+let sumaResultado = (a, b) => a + b;
+let productoResultado = (a, b) => a * b;
+let mensajeCallback = "Bien";
+
+function operacionesEncadenadas (valor1, valor2, sumaResultado, productoResultado, mensajeCallback) {
+
+    let resultadoSuma =  sumaResultado(valor1, valor2);
+    let resultadoProducto = productoResultado(valor1, valor2);
+
+    return alert(resultadoSuma + ", " + resultadoProducto + ", " + mensajeCallback);
+}
+
+operacionesEncadenadas(2, 3, sumaResultado, productoResultado, mensajeCallback);
+
+*/
+
+// Enunciado 22: Crea una función que sume todos los elementos de un array numérico.(Sin recorrer el Array)
+
+/*
+
+function sumaArray (arrayNumeros) {
+
+    return numeros.reduce((contador, valorActual) => contador + valorActual);
+
+}
+
+let numeros = [1, 52, 10];
+alert(sumaArray(numeros));
+
+*/
+
+// Enunciado 23: Encuentra y muestra todos los números pares de un array. (Sin recorrer el Array)
+
+/*
+
+let arrayNumeros = [983,5982,369,8296,237860];
+
+alert(arrayNumeros.filter((numeroPar) => numeroPar%2==0))
+
+*/
+
+// Enunciado 24: Encuentra la palabra más larga en un array de palabras.
+
+/*
+
+let arrayPalabras = ["Encuentra", "la", "palabra", "más", "larga", "en", "un", "array", "de", "palabras"];
+
+alert(arrayPalabras.reduce((palabra, palabraActual) => {
     
+    return palabra.length > palabraActual.length ? palabra : palabraActual;
+
+}));
+
+*/
+
+// Enunciado 25: Elimina los elementos duplicados de un array. (Usa la estructura Set como ayuda)
+
+/*
+
+let array = [1,23,6,1,23,3,3,2,2,3,53,52,1,"h","h"];
+
+let arraySet = new Set(array);
+
+let arraySinDuplicados = Array.from(arraySet);
+
+alert(arraySinDuplicados)
+
+*/
+
+// Enunciado 26: Usando el siguiente array que contiene una lista de nombres de países vamos a crear una serie de funciones para
+// realizar diferentes operaciones sobre ese array. 
+
+const paises = ["México", "Japón", "Italia", "Australia", "Brasil", "Canadá", "Francia", "Alemania", "India", "Argentina", "España", "China", "Sudáfrica", "Rusia", "Corea del Sur", "Reino Unido", "Estados Unidos", "Indonesia", "Egipto", "Turquía"];
+
+
+    // Función mostrarArray. Nos muestra en el documento HTML el número de elementos del array y
+    // a continuación el contenido del array en una lista numerada (ol)
+
+    /*
+
+document.write("<ol>")
+
+paises.forEach(pais => {
+    
+    document.write("<li>" + pais + "</li><br>");
+});
+
+document.write("</ol>")
+
+    */
+
+    // Función mostrarArrayAlreves. Igual que la anterior pero antes de mostrarlo lo ordena en sentido inverso.
+    // El array queda modificado.
+
+    /*
+
+document.write("<ol>")
+
+paises.reverse().forEach(pais => {
+    
+    document.write("<li>" + pais + "</li><br>");
+});
+
+document.write("</ol>")
+
+    */
+
+    // Función añadirElemento. Nos debe pedir un elemento y preguntarnos si lo queremos añadir al principio, al final o en una posición concreta. 
+    // Después lo añadimos en dicha posición y lo mostramos con la función mostrarArray.
+
+    /*
+
+let paisNuevo = prompt("Dime un país");
+let posicion = prompt("Dime en que posicion lo quieres (1-20)");
+
+paises.splice(parseInt(posicion) - 1, 0,paisNuevo);
+
+document.write("<ol>")
+
+paises.forEach(pais => {
+    
+    document.write("<li>" + pais + "</li><br>");
+});
+
+document.write("</ol>")
+
+    */
+
+    // Función eliminarElementoPosicion. La función debe dar la opción de eliminar al principio, 
+    // al final o en una posición dada por el usuario. Después mostramos el array modificado con la función mostrarArray
+
+    /*
+
+let posicionAEliminar = prompt("Dime laposicion que quieras eliminar");
+
+paises.splice(parseInt(posicionAEliminar) - 1, 1);
+
+document.write("<ol>")
+
+paises.forEach(pais => {
+    
+    document.write("<li>" + pais + "</li><br>");
+});
+
+document.write("</ol>")
+
+    */
+
+    //

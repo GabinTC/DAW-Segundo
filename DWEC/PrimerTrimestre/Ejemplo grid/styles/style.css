@@ -1,0 +1,43 @@
+body {
+    margin : 0;
+    padding : 0;
+    display: grid;
+    grid-template-columns: 1fr 15vw;
+    grid-template-rows: 4fr;
+    grid-template-areas: "header header" "menu main" "aside aside" "footer footer";
+}
+
+main {
+    grid-area: menu;
+}
+
+header {
+    display: grid;
+    justify-items: center;
+    grid-area : header;
+    justify-content: center;
+    background-color: gray;
+    nav {   
+        justify-self: center;
+        ul {
+            li {
+                display: inline;
+            }
+        }
+    }
+}
+
+aside {
+    background-color:silver;
+    color: white;
+    a {
+        text-decoration: none;
+        color: white;
+    }
+}
+
+footer {
+    grid-area: footer;
+}
+
+

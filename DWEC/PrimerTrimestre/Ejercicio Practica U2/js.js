@@ -605,20 +605,21 @@ function buscarPais(arrayPaises) {
 // Si existe lo indica con un mensaje indicando la posición. 
 // La función devuelve la posición en la que está el país, o la posición en la que lo ha insertado.
 
+/*
+
 function aniadirPais(arrayPaises) {
     let paisAniadir = prompt("Dime que país quieres añadir(Israel no está permitido)");
 
-    if(arrayPaises.indexOf(paisAniadir) == -1 || pais == "Israel"){
+    if(arrayPaises.indexOf(paisAniadir) != -1 || paisAniadir == "Israel"){
         return "No se puede, ya existe (o es Israel). Ese país esta en la posición " + arrayPaises.indexOf(paisAniadir);
     }
 
     arrayPaises.push(paisAniadir);
 
-    return paisAñadir + " se añadió en la posición " + arrayPaises.indexOf(paisAniadir);
+    return paisAniadir + " se añadió en la posición " + (arrayPaises.indexOf(paisAniadir) + 1);
 }
 
-let msj = aniadirPais(paises);
-alert(msj);
+alert(aniadirPais(paises));
 
 document.write("<ol>")
 
@@ -628,3 +629,77 @@ document.write("<ol>")
         });
     
         document.write("</ol>")
+
+*/
+
+// Crea un script en javascript para gestionar una colección de discos 
+// almacenando en Localstorage la información de forma permanente.
+
+// La colección la vamos a definir como un array de objetos. 
+// Cada elemento del array será un Disco que contendrá la siguiente información:
+// Nombre : string
+// Lista de canciones: Array de canciones. Cada canción será un objeto con tres 
+//  atributos (título, autor, duración en mm:SS como string)
+// Artista: String con el nombre del grupo o interprete 
+// Año publicación
+// Estilo musical
+// Método mostrarCanciones: Al llamarlo nos muestra en una lista ordenada las canciones del Álbum.
+// Metodo añadirCancion: nos permite insertar una canción en el Álbum al final de las existentes.
+// Método borrarCancion: Nos permite eliminar una canción buscando por el título de la canción.
+
+// Crearemos las funciones necesarias para poder realizar las siguientes acciones :
+// Añadir un disco a la colección.
+// Eliminar un disco de la colección dado un nombre de disco. 
+
+// Para ejecutar el programa debes crear un menú (en un prompt) en el que te ofrezca las 
+//  siguientes opciones:
+// Añadir nuevo disco a la colección. Preguntar los datos del disco y opcionalmente incluir 
+//  canciones al disco al añadirlo.
+// Añadir Canciones a un disco existente, para saber el disco al que añadimos la canción 
+//  buscaremos por el nombre del disco.
+// Eliminar Disco buscando  por el nombre del disco.
+// Salir Guardando al LS. Muestra la colección en una lista  al salir
+// Salir sin guardar. Muestra la colección en una lista al salir
+
+// Los cambios en el LocalStorage se harán cuando el usuario salga del menú de opciones en la opción 5.
+
+const discos = [];
+
+class Cancion {
+
+    constructor (titulo, autor, duracion){
+        this.titulo = titulo;
+        this.autor = autor;
+        this.duracion = duracion;
+    }
+
+    getTitulo(){
+        return this.titulo;
+    }
+
+    getAutor(){
+        return this.autor;
+    }
+
+    getDuracion(){
+        return this.duracion;
+    }
+}
+
+class Disco {
+
+    constructor (nombre, canciones, artista, anioPublicacion, estilo){
+        this.nombre = nombre;
+        this.canciones = canciones;
+        this.artista = artista;
+        this.anioPublicacion = anioPublicacion;
+        this.estilo = estilo;
+    }
+
+    mostrarCanciones(){
+        this.canciones.forEach(cancion => {
+            document.write(cancion.getAutor)
+        });
+    }
+}
+

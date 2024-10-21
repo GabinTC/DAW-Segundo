@@ -486,11 +486,11 @@ alert(arraySinDuplicados)
 // Enunciado 26: Usando el siguiente array que contiene una lista de nombres de países vamos a crear una serie de funciones para
 // realizar diferentes operaciones sobre ese array. 
 
-
+/*
 
 const paises = ["México", "Japón", "Italia", "Australia", "Brasil", "Canadá", "Francia", "Alemania", "India", "Argentina", "España", "China", "Sudáfrica", "Rusia", "Corea del Sur", "Reino Unido", "Estados Unidos", "Indonesia", "Egipto", "Turquía"];
 
-
+*/
 
 // 1 - Función mostrarArray. Nos muestra en el documento HTML el número de elementos del array y
 // a continuación el contenido del array en una lista numerada (ol)
@@ -559,7 +559,7 @@ function añadirElemento(arrayPaises) {
 function eliminarElementoPosicion(arrayPaises) {
     let opcionEliminar = prompt("- Borrar el primer país (1)\n" + 
         "- Borrar el último país (2)\n" + 
-        "- Elegir la posición a borrar (3)(Francia está el 6º)");
+        "- Elegir la posición a borrar (3)");
 
         switch(opcionEliminar){
 
@@ -608,10 +608,10 @@ function buscarPais(arrayPaises) {
 /*
 
 function aniadirPais(arrayPaises) {
-    let paisAniadir = prompt("Dime que país quieres añadir(Israel no está permitido)");
+    let paisAniadir = prompt("Dime que país quieres añadir");
 
-    if(arrayPaises.indexOf(paisAniadir) != -1 || paisAniadir == "Israel"){
-        return "No se puede, ya existe (o es Israel). Ese país esta en la posición " + arrayPaises.indexOf(paisAniadir);
+    if(arrayPaises.indexOf(paisAniadir) != -1){
+        return "No se puede, ya existe). Ese país esta en la posición " + arrayPaises.indexOf(paisAniadir);
     }
 
     arrayPaises.push(paisAniadir);
@@ -663,32 +663,18 @@ document.write("<ol>")
 
 // Los cambios en el LocalStorage se harán cuando el usuario salga del menú de opciones en la opción 5.
 
-const discos = [];
-
 class Cancion {
 
-    constructor (titulo, autor, duracion){
+    constructor(titulo, autor, duracion) {
         this.titulo = titulo;
         this.autor = autor;
         this.duracion = duracion;
-    }
-
-    getTitulo(){
-        return this.titulo;
-    }
-
-    getAutor(){
-        return this.autor;
-    }
-
-    getDuracion(){
-        return this.duracion;
     }
 }
 
 class Disco {
 
-    constructor (nombre, canciones, artista, anioPublicacion, estilo){
+    constructor(nombre, artista, anioPublicacion, estilo, canciones = []) {
         this.nombre = nombre;
         this.canciones = canciones;
         this.artista = artista;
@@ -696,10 +682,68 @@ class Disco {
         this.estilo = estilo;
     }
 
-    mostrarCanciones(){
+    addCancion(cancion) {
+        this.canciones.push(cancion);
+    }
+
+    mostrarCanciones() {
         this.canciones.forEach(cancion => {
-            document.write(cancion.getAutor)
+            document.write(cancion.titulo + ", " + cancion.autor + ", " + cancion.duracion + "<br>")
         });
+    }
+
+    borrarCancion(nombreCancion) {
+        this.canciones.forEach(cancion => {
+            if (cancion.titulo == nombreCancion) {
+                this.canciones.splice(this.canciones.indexOf(cancion), 1);
+            }
+        })
     }
 }
 
+const coleccionDiscos = [];
+
+let opcion = prompt("¿Que quieres hacer?\n- (1) Crear un disco\n- (2) Añadir canciones a un disco\n- (3) Eliminar un disco por su nombre")
+
+switch (opcion) {
+    case "1":
+
+        let nombreDisco = prompt("Nombre del nuevo disco");
+        let artistaDisco = prompt("Artista del disco");
+        let anioPublicacionDisco = prompt("Año de publicacion del disco");
+        let estiloDisco = prompt("Estilo del disco");
+
+        coleccionDiscos.push(new Disco(nombreDisco, artistaDisco, anioPublicacionDisco, estiloDisco, []));
+
+        break;
+    case "2":
+
+        let nombreDiscoBuscado = prompt("Dime el nombre del disco");
+
+        coleccionDiscos.forEach(disco => {
+            if (disco.nombre == nombreDiscoBuscado) {
+                let nombreCancion = prompt("Nombre de la cancion")
+                let autorCancion = prompt("Autor de la cancion")
+                let duracionCancion = prompt("Duracion de la cancion")
+                disco.push(new Cancion(nombreCancion, autorCancion, duracionCancion));
+            }
+        });
+
+        break;
+    case "3":
+
+        let nombreDiscoAEliminar = prompt("Dime el nombre del disco");
+
+        coleccionDiscos.forEach(disco => {
+            if (disco.nombre == nombreDiscoAEliminar) {
+                coleccionDiscos.splice(coleccionDiscos.indexOf(nombreDiscoAEliminar), 1);
+            }
+        });
+
+    default:
+        break;
+}
+
+coleccionDiscos.forEach(disco => {
+    document.write(disco.nombre);
+});

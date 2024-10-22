@@ -632,15 +632,131 @@ document.write("<ol>")
 
 */
 
-// Crea un script en javascript para gestionar una colección de discos 
+// Enunciado 27: Define una función a la que le pasaremos un número y 
+// el tipo de redondeo a realizar. La función devolverá el resultado del redondeo 
+// y además mostrará el valor del redondeo en el documento junto a un mensaje 
+// indicando el tipo de redondeo. 
+
+/*
+
+let numero = parseFloat(prompt("Dime que numero quieres redondear"));
+let tipoRedondeo = prompt("¿De que manera lo quieres redondear?\n- (1) Redondeo normal\n- (2) Truncar")
+
+function redondear(numero, tipoRedondeo) {
+    switch (tipoRedondeo) {
+        case "1":
+            return "Redondeo: " + Math.round(numero);
+
+        case "2":
+            return "Truncar: " + Math.floor(numero);
+
+        default:
+            return "Selecciona una opción válida";
+    }
+}
+
+*/
+
+// Enunciado 28: Define una función a la que le pasaremos dos enteros (limite inferior y límite superior) 
+// y la función nos devolverá una entero aleatorio en el rango [limiteInferior,limiteSuperior).
+// Además mostrará en el documento un mensaje indicando el número aleatorio y el rango en el 
+// que se encuentra.
+
+/*
+
+let numeroLimInferior = parseInt(prompt("Limite inferior"));
+let numeroLimSuperior = parseInt(prompt("Limite superior"));
+
+function randomEntreDosNumeros(numeroLimInferior, numeroLimSuperior) {
+    return Math.random() * (numeroLimSuperior - numeroLimInferior) + numeroLimInferior;
+}
+
+*/
+
+// Enunciado 29: Define una función a la que le pasaremos un ángulo y la función 
+// trigonométrica a aplicar y nos devolverá el resultado de aplicar la función trigonométrica
+// y mostrará en el documento la operación aplicada con el resultado.
+
+/*
+
+let angulo = parseFloat(prompt("Dime el numero"));
+let tipoDeFuncion = prompt("- (1) sin\n- (2) cos\n- (3) tan")
+
+function calcularFuncionTrigonometrica(angulo, tipoDeFuncion) {
+    switch (tipoDeFuncion) {
+        case "1":
+
+            return "Seno: " + Math.sin(angulo);
+
+        case "2":
+
+            return "Coseno: " + Math.cos(angulo);
+
+        case "3":
+
+        return "Tangente: " + Math.tan(angulo);
+
+        default:
+            return "Selecciona una opción válida";
+    }
+}
+
+*/
+
+// Enunciado 30: Define una función que muestre la fecha actual en diferentes formatos
+//      5/10/2021
+//      Wed Oct 06 2021.
+//      Wed, 06 Oct 2021 15:54:47 GMT
+
+/*
+
+function mostrarFecha(){
+    let fechaActual = new Date()
+    document.write("Formato 1 = " + fechaActual.getDate() + "/" + fechaActual.getMonth() + "/" + fechaActual.getFullYear() + "<br>")
+    document.write("Formato 2 = " + fechaActual.toDateString() + "<br>")
+    document.write("Formato 3 = " + fechaActual.toUTCString())
+}
+
+*/
+
+// Enunciado 31: Define una función que muestre la hora actual en diferentes formatos
+//      14:35:07 (hora detallada con minutos y segundos)
+//      02:35 PM o 02:35 AM (hora con minutos y AM o PM según sea antes o después del medio día).
+
+/*
+
+function mostrarHora(){
+    let horaActual = new Date();
+
+    document.write("Formato 1: " + horaActual.toLocaleTimeString("it-IT") + "<br>");
+    document.write("Formato 2: " + horaActual.toLocaleTimeString("en-US"));
+}
+
+*/
+
+// Enunciado 32: Define una función que muestre el número de días que  quedan desde
+// hoy hasta el fin de curso (el 23 de junio).
+
+/*
+
+function cuentaDias(){
+    let fechaActual = new Date();
+    let fechaFinCurso = new Date("23 Jun 2025 00:00:00 GMT");
+
+    document.write(parseInt(parseInt(fechaFinCurso - fechaActual) / 1000 / 60 / 60 / 24) + " días")
+}
+
+*/
+
+// Enunciado 37: Crea un script en javascript para gestionar una colección de discos
 // almacenando en Localstorage la información de forma permanente.
 
-// La colección la vamos a definir como un array de objetos. 
+// La colección la vamos a definir como un array de objetos.
 // Cada elemento del array será un Disco que contendrá la siguiente información:
 // Nombre : string
-// Lista de canciones: Array de canciones. Cada canción será un objeto con tres 
+// Lista de canciones: Array de canciones. Cada canción será un objeto con tres
 //  atributos (título, autor, duración en mm:SS como string)
-// Artista: String con el nombre del grupo o interprete 
+// Artista: String con el nombre del grupo o interprete
 // Año publicación
 // Estilo musical
 // Método mostrarCanciones: Al llamarlo nos muestra en una lista ordenada las canciones del Álbum.
@@ -649,19 +765,21 @@ document.write("<ol>")
 
 // Crearemos las funciones necesarias para poder realizar las siguientes acciones :
 // Añadir un disco a la colección.
-// Eliminar un disco de la colección dado un nombre de disco. 
+// Eliminar un disco de la colección dado un nombre de disco.
 
-// Para ejecutar el programa debes crear un menú (en un prompt) en el que te ofrezca las 
+// Para ejecutar el programa debes crear un menú (en un prompt) en el que te ofrezca las
 //  siguientes opciones:
-// Añadir nuevo disco a la colección. Preguntar los datos del disco y opcionalmente incluir 
+// Añadir nuevo disco a la colección. Preguntar los datos del disco y opcionalmente incluir
 //  canciones al disco al añadirlo.
-// Añadir Canciones a un disco existente, para saber el disco al que añadimos la canción 
+// Añadir Canciones a un disco existente, para saber el disco al que añadimos la canción
 //  buscaremos por el nombre del disco.
 // Eliminar Disco buscando  por el nombre del disco.
 // Salir Guardando al LS. Muestra la colección en una lista  al salir
 // Salir sin guardar. Muestra la colección en una lista al salir
 
 // Los cambios en el LocalStorage se harán cuando el usuario salga del menú de opciones en la opción 5.
+
+/*
 
 class Cancion {
 
@@ -688,7 +806,7 @@ class Disco {
 
     mostrarCanciones() {
         this.canciones.forEach(cancion => {
-            document.write(cancion.titulo + ", " + cancion.autor + ", " + cancion.duracion + "<br>")
+            document.write("Canción: " + cancion.titulo + ", " + cancion.autor + ", " + cancion.duracion + "<br>")
         });
     }
 
@@ -703,6 +821,16 @@ class Disco {
 
 const coleccionDiscos = [];
 
+const disco1 = new Disco("disc1", "art1", 1289, "est1")
+const disco2 = new Disco("disc2", "art2", 1245, "est2")
+const disco3 = new Disco("disc3", "art3", 1363, "est3")
+const disco4 = new Disco("disc4", "art4", 1748, "est4")
+
+coleccionDiscos.push(disco1)
+coleccionDiscos.push(disco2)
+coleccionDiscos.push(disco3)
+coleccionDiscos.push(disco4)
+
 let opcion = prompt("¿Que quieres hacer?\n- (1) Crear un disco\n- (2) Añadir canciones a un disco\n- (3) Eliminar un disco por su nombre")
 
 switch (opcion) {
@@ -713,7 +841,31 @@ switch (opcion) {
         let anioPublicacionDisco = prompt("Año de publicacion del disco");
         let estiloDisco = prompt("Estilo del disco");
 
-        coleccionDiscos.push(new Disco(nombreDisco, artistaDisco, anioPublicacionDisco, estiloDisco, []));
+        const disco = new Disco(nombreDisco, artistaDisco, anioPublicacionDisco, estiloDisco)
+
+        coleccionDiscos.push(disco);
+
+        let opcionAddCanciones = prompt("¿Quieres añadir alguna cacion al disco?\n- (1) Sí\n- (2) No")
+
+        switch (opcionAddCanciones) {
+            case "1":
+
+                let nombreCancion = prompt("Nombre de la cancion")
+                let autorCancion = prompt("Autor de la cancion")
+                let duracionCancion = prompt("Duracion de la cancion")
+
+                const cancion = new Cancion(nombreCancion, autorCancion, duracionCancion);
+
+                disco.addCancion(cancion);
+
+                break;
+
+            case "2":
+                break;
+
+            default:
+                break;
+        }
 
         break;
     case "2":
@@ -725,7 +877,10 @@ switch (opcion) {
                 let nombreCancion = prompt("Nombre de la cancion")
                 let autorCancion = prompt("Autor de la cancion")
                 let duracionCancion = prompt("Duracion de la cancion")
-                disco.push(new Cancion(nombreCancion, autorCancion, duracionCancion));
+
+                const cancion = new Cancion(nombreCancion, autorCancion, duracionCancion)
+
+                disco.addCancion(cancion);
             }
         });
 
@@ -736,7 +891,7 @@ switch (opcion) {
 
         coleccionDiscos.forEach(disco => {
             if (disco.nombre == nombreDiscoAEliminar) {
-                coleccionDiscos.splice(coleccionDiscos.indexOf(nombreDiscoAEliminar), 1);
+                coleccionDiscos.splice(coleccionDiscos.indexOf(disco), 1);
             }
         });
 
@@ -744,6 +899,24 @@ switch (opcion) {
         break;
 }
 
+let opcionLS = prompt("¿Quieres salir guardando los datos en local storage? (s, n)")
+
+switch (opcionLS) {
+    case "s":
+        localStorage.setItem("Discos", JSON.stringify(coleccionDiscos))
+        break;
+
+    case "n":
+
+        break;
+
+    default:
+        break;
+}
+
 coleccionDiscos.forEach(disco => {
-    document.write(disco.nombre);
+    document.write(disco.nombre + "<br>");
+    document.write(disco.mostrarCanciones() + "<br>")
 });
+
+*/
